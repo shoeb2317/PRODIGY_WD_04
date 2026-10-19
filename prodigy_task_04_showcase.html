@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <title>Prodigy InfoTech Task 04 Showcase | Shoeb Raju Tahsildar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #030712;
+            --bg-card: rgba(15, 23, 42, 0.72);
+            --border-glass: rgba(255, 255, 255, 0.12);
+            --border-glow: rgba(0, 242, 254, 0.35);
+            --cyan: #00f2fe;
+            --blue: #3b82f6;
+            --emerald: #10b981;
+            --purple: #a855f7;
+            --amber: #f59e0b;
+            --rose: #f43f5e;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --font-head: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 1920px;
+            height: 1080px;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px 60px 36px 60px;
+        }
+
+        /* Ambient Cyber-Luxe Background */
+        .ambient-grid {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+        }
+
+        .ambient-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-1 {
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(0, 242, 254, 0.32) 0%, rgba(59, 130, 246, 0.1) 70%);
+            top: -150px;
+            left: -120px;
+        }
+
+        .glow-2 {
+            width: 750px;
+            height: 750px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.28) 0%, rgba(59, 130, 246, 0.08) 70%);
+            bottom: -180px;
+            right: -100px;
+        }
+
+        .glow-3 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+            top: 45%;
+            left: 45%;
+        }
+
+        /* Top Bar */
+        .header-bar {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 22px;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .brand-icon-box {
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #00f2fe 0%, #3b82f6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.5);
+        }
+
+        .brand-icon-box svg {
+            width: 28px;
+            height: 28px;
+            fill: #030712;
+        }
+
+        .brand-title {
+            font-family: var(--font-head);
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .brand-title span {
+            color: var(--cyan);
+        }
+
+        .brand-sub {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .verified-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.45);
+            padding: 10px 22px;
+            border-radius: 9999px;
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.2);
+        }
+
+        .verified-badge .dot {
+            width: 10px;
+            height: 10px;
+            background: var(--emerald);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--emerald);
+        }
+
+        .verified-badge span {
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #34d399;
+            text-transform: uppercase;
+        }
+
+        .repo-badge {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--cyan);
+            background: rgba(0, 242, 254, 0.08);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            padding: 10px 20px;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .repo-badge svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        /* Main Workspace Section */
+        .main-stage {
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 48px;
+            align-items: center;
+            height: 100%;
+            padding: 18px 0;
+        }
+
+        /* Left Column Details */
+        .details-col {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .milestone-chips {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chip-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border-radius: 9999px;
+            font-family: var(--font-head);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .chip-cyan {
+            background: rgba(0, 242, 254, 0.12);
+            border: 1px solid rgba(0, 242, 254, 0.4);
+            color: var(--cyan);
+        }
+
+        .chip-purple {
+            background: rgba(168, 85, 247, 0.14);
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            color: #d8b4fe;
+        }
+
+        .main-headline {
+            font-family: var(--font-head);
+            font-size: 60px;
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -1.8px;
+            color: #ffffff;
+        }
+
+        .headline-gradient {
+            background: linear-gradient(135deg, #ffffff 10%, #00f2fe 55%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .headline-sub {
+            font-size: 17px;
+            color: #cbd5e1;
+            line-height: 1.55;
+            max-width: 95%;
+        }
+
+        /* Developer Card */
+        .dev-profile-strip {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 16px 22px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+            width: fit-content;
+        }
+
+        .avatar-holder {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(135deg, #00f2fe, #a855f7);
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.4);
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #030712;
+        }
+
+        .avatar-badge {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            background: var(--emerald);
+            color: #030712;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #030712;
+        }
+
+        .avatar-badge svg {
+            width: 12px;
+            height: 12px;
+            fill: #030712;
+        }
+
+        .dev-data h4 {
+            font-family: var(--font-head);
+            font-size: 21px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .dev-data p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 3px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .dev-data p svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--cyan);
+        }
+
+        .tag-row {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .tag-item {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #e2e8f0;
+        }
+
+        /* Features Bento */
+        .features-bento {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            width: 100%;
+        }
+
+        .bento-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 14px 18px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            backdrop-filter: blur(14px);
+        }
+
+        .bento-icon-box {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .bento-icon-box svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .box-cyan {
+            background: rgba(0, 242, 254, 0.15);
+            border: 1px solid rgba(0, 242, 254, 0.35);
+            color: var(--cyan);
+        }
+
+        .box-purple {
+            background: rgba(168, 85, 247, 0.15);
+            border: 1px solid rgba(168, 85, 247, 0.35);
+            color: #c084fc;
+        }
+
+        .box-emerald {
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            color: var(--emerald);
+        }
+
+        .box-blue {
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            color: #60a5fa;
+        }
+
+        .bento-card h5 {
+            font-family: var(--font-head);
+            font-size: 15px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .bento-card p {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.45;
+            margin-top: 2px;
+        }
+
+        /* Tech Tags */
+        .tech-pill-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            padding: 7px 16px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #f1f5f9;
+        }
+
+        .tech-tag svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Right Column Showcase Mockup */
+        .mockup-col {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .browser-window {
+            width: 100%;
+            height: 600px;
+            background: #080d1e;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 
+                0 30px 70px -15px rgba(0, 0, 0, 0.85),
+                0 0 50px rgba(0, 242, 254, 0.18);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .browser-top {
+            background: #0d1527;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .window-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .d-red { background: #ef4444; }
+        .d-yellow { background: #f59e0b; }
+        .d-green { background: #10b981; }
+
+        .address-box {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 6px 14px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .address-box svg {
+            width: 12px;
+            height: 12px;
+            fill: var(--emerald);
+        }
+
+        .address-box strong {
+            color: #ffffff;
+        }
+
+        /* Inside Browser Content */
+        .window-content {
+            flex: 1;
+            padding: 24px 28px;
+            background: linear-gradient(180deg, #070d1e 0%, #030712 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Inner Nav */
+        .inner-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 14px;
+        }
+
+        .inner-brand {
+            font-family: var(--font-head);
+            font-weight: 900;
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+        .inner-brand span {
+            color: var(--cyan);
+        }
+
+        .inner-menu {
+            display: flex;
+            gap: 16px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #94a3b8;
+        }
+
+        .inner-menu span.active {
+            color: var(--cyan);
+        }
+
+        /* Inner Hero */
+        .inner-hero {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            align-items: center;
+            gap: 20px;
+            padding: 8px 0;
+        }
+
+        .inner-hero-text {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .inner-status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            color: #34d399;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 800;
+            width: fit-content;
+        }
+
+        .inner-name {
+            font-family: var(--font-head);
+            font-size: 28px;
+            font-weight: 900;
+            line-height: 1.15;
+            color: #ffffff;
+        }
+
+        .inner-name span {
+            color: var(--cyan);
+        }
+
+        .inner-desc {
+            font-size: 12px;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        .inner-cta-btns {
+            display: flex;
+            gap: 10px;
+            margin-top: 4px;
+        }
+
+        .btn-cyan {
+            background: linear-gradient(135deg, var(--cyan), var(--blue));
+            color: #030712;
+            padding: 7px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-dark {
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            padding: 7px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .inner-avatar-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inner-avatar-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--cyan), var(--purple));
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.35);
+        }
+
+        .inner-avatar-circle img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Inner Featured Projects Strip */
+        .inner-projects-strip {
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: 12px 16px;
+        }
+
+        .projects-strip-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .strip-heading {
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .strip-heading svg {
+            width: 13px;
+            height: 13px;
+            fill: var(--cyan);
+        }
+
+        .strip-count {
+            font-size: 10px;
+            font-weight: 800;
+            color: var(--cyan);
+            background: rgba(0, 242, 254, 0.12);
+            padding: 3px 10px;
+            border-radius: 6px;
+        }
+
+        .projects-grid-mini {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .project-tile {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-tile img {
+            width: 100%;
+            height: 60px;
+            object-fit: cover;
+        }
+
+        .tile-meta {
+            padding: 8px 10px;
+        }
+
+        .tile-meta h6 {
+            font-size: 11px;
+            font-weight: 800;
+            color: #ffffff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .tile-meta span {
+            font-size: 9px;
+            color: var(--text-muted);
+            font-weight: 600;
+            display: block;
+            margin-top: 1px;
+        }
+
+        /* Floating Accent Badges Over Browser */
+        .float-overlay {
+            position: absolute;
+            background: rgba(13, 21, 38, 0.92);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+            z-index: 20;
+        }
+
+        .float-badge-top {
+            top: -18px;
+            right: 24px;
+            border-top: 3px solid var(--purple);
+        }
+
+        .float-badge-bottom {
+            bottom: -18px;
+            left: 24px;
+            border-bottom: 3px solid var(--emerald);
+        }
+
+        .float-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .float-icon svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .float-icon-emerald {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--emerald);
+        }
+
+        .float-icon-purple {
+            background: rgba(168, 85, 247, 0.2);
+            color: #c084fc;
+        }
+
+        .float-title {
+            font-family: var(--font-head);
+            font-size: 14px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .float-desc {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 1px;
+        }
+
+        /* Bottom Footer */
+        .footer-bar {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            font-size: 13px;
+        }
+
+        .footer-contact {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            color: #cbd5e1;
+            font-weight: 600;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-item svg {
+            width: 15px;
+            height: 15px;
+            fill: var(--cyan);
+        }
+
+        .footer-credit {
+            font-family: var(--font-head);
+            font-weight: 600;
+            color: #94a3b8;
+        }
+
+        .footer-credit strong {
+            color: #ffffff;
+        }
+
+        .footer-tags {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 700;
+            color: #c084fc;
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient glowing lights -->
+    <div class="ambient-grid"></div>
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Header Bar -->
+    <header class="header-bar">
+        <div class="brand-container">
+            <div class="brand-icon-box">
+                <!-- Code icon -->
+                <svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+            </div>
+            <div>
+                <h3 class="brand-title">PRODIGY <span>INFOTECH</span></h3>
+                <p class="brand-sub">Web Development Virtual Internship</p>
+            </div>
+        </div>
+
+        <div class="header-actions">
+            <div class="verified-badge">
+                <div class="dot"></div>
+                <span>Task 04 Completed</span>
+            </div>
+            <div class="repo-badge">
+                <!-- GitHub icon -->
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                PRODIGY_WD_04
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Stage Content -->
+    <main class="main-stage">
+        <!-- Left Info Column -->
+        <div class="details-col">
+            <div class="milestone-chips">
+                <div class="chip-pill chip-cyan">
+                    <!-- Trophy icon -->
+                    <svg style="width: 15px; height: 15px; fill: currentColor;" viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0011 15.9V19H7v2h10v-2h-4v-3.1c1.88-.41 3.32-1.9 3.61-3.96C19.08 11.63 21 9.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>
+                    Milestone Task 04
+                </div>
+                <div class="chip-pill chip-purple">
+                    Full Stack Portfolio
+                </div>
+            </div>
+
+            <h1 class="main-headline">
+                Personal Developer <br>
+                <span class="headline-gradient">Portfolio Website</span>
+            </h1>
+
+            <p class="headline-sub">
+                Engineered a comprehensive, ultra-modern developer portfolio featuring interactive components, dynamic dark/light themes, responsive navigation, and real-world project presentations.
+            </p>
+
+            <!-- Developer Profile Snapshot -->
+            <div class="dev-profile-strip">
+                <div class="avatar-holder">
+                    <img src="profile.jpg" alt="Shoeb Raju Tahsildar" class="avatar-img">
+                    <div class="avatar-badge">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </div>
+                </div>
+                <div class="dev-data">
+                    <h4>Shoeb Raju Tahsildar</h4>
+                    <p>
+                        <!-- Cap icon -->
+                        <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                        MCA Candidate &bull; Full Stack Developer
+                    </p>
+                    <div class="tag-row">
+                        <span class="tag-item">8.70 MCA CGPA</span>
+                        <span class="tag-item">9.00 BCA CGPA</span>
+                        <span class="tag-item">Kolhapur, Maharashtra</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bento Features Grid -->
+            <div class="features-bento">
+                <div class="bento-card">
+                    <div class="bento-icon-box box-cyan">
+                        <!-- Mobile icon -->
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                    </div>
+                    <div>
+                        <h5>Responsive Architecture</h5>
+                        <p>Mobile-first fluid layout, modern semantic HTML5 and modular CSS3</p>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon-box box-purple">
+                        <!-- Theme icon -->
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18V4c4.41 0 8 3.59 8 8s-3.59 8-8 8z"/></svg>
+                    </div>
+                    <div>
+                        <h5>Dark & Light Themes</h5>
+                        <p>Seamless CSS theme toggling with smooth transitions and glowing accents</p>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon-box box-emerald">
+                        <!-- Folder icon -->
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/></svg>
+                    </div>
+                    <div>
+                        <h5>Live Projects Hub</h5>
+                        <p>Showcasing Lost & Found Portal, Foundry ERP, and Academic Dashboard</p>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="bento-icon-box box-blue">
+                        <!-- Bolt icon -->
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.9 17.55 11 21 11 21z"/></svg>
+                    </div>
+                    <div>
+                        <h5>Interactive Micro-UX</h5>
+                        <p>Floating tech pills, typing header, copy-to-clipboard, and CV modal</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Badges -->
+            <div class="tech-pill-container">
+                <span class="tech-tag">
+                    <svg viewBox="0 0 24 24" fill="#e34f26"><path d="M1.5 0h21l-1.91 21.48L12 24l-8.59-2.52L1.5 0zm17.07 4.88H5.43l.42 4.71h11.83l-.42 4.71-5.26 1.46-5.26-1.46-.28-3.14H3.87l.49 5.58L12 19.88l7.64-2.14.93-10.86z"/></svg>
+                    HTML5 Semantic
+                </span>
+                <span class="tech-tag">
+                    <svg viewBox="0 0 24 24" fill="#1572b6"><path d="M1.5 0h21l-1.91 21.48L12 24l-8.59-2.52L1.5 0zm16.65 4.88H5.85l.33 3.73h11.14l-.33 3.73H8.38l.18 2.05h8.11l-.44 4.96-4.23 1.18-4.23-1.18-.27-3.08H5.06l.46 5.51L12 20.98l6.48-1.8.84-9.3.08-.87.75-8.93z"/></svg>
+                    CSS3 Glassmorphism
+                </span>
+                <span class="tech-tag">
+                    <svg viewBox="0 0 24 24" fill="#f7df1e"><path d="M0 0h24v24H0V0zm22.03 16.64c-.21-.43-.72-.73-1.41-.73-.59 0-.96.26-.96.65 0 .42.36.6 1.09.89 1.48.59 2.22 1.34 2.22 2.63 0 1.58-1.2 2.6-3.15 2.6-1.66 0-2.67-.78-3.07-1.82l1.6-.96c.26.54.74.88 1.44.88.66 0 1.07-.31 1.07-.72 0-.46-.39-.63-1.14-.94-1.43-.59-2.16-1.32-2.16-2.58 0-1.49 1.16-2.52 2.97-2.52 1.45 0 2.4.67 2.8 1.62l-1.3 1.08zm-7.69.75v3.13c0 .87-.41 1.25-1.19 1.25-.77 0-1.18-.39-1.18-1.25V13.8h2.37v3.59z"/></svg>
+                    Vanilla JavaScript ES6+
+                </span>
+                <span class="tech-tag">
+                    <svg viewBox="0 0 24 24" fill="#10b981"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    100% Production Ready
+                </span>
+            </div>
+        </div>
+
+        <!-- Right Visual Mockup Column -->
+        <div class="mockup-col">
+            <!-- Browser Mockup Window -->
+            <div class="browser-window">
+                <!-- Browser Header -->
+                <div class="browser-top">
+                    <div class="window-dots">
+                        <div class="dot-btn d-red"></div>
+                        <div class="dot-btn d-yellow"></div>
+                        <div class="dot-btn d-green"></div>
+                    </div>
+                    <div class="address-box">
+                        <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                        <strong>shoeb-tahsildar.dev</strong><span>/portfolio</span>
+                    </div>
+                    <div style="font-size: 13px; color: #64748b; font-family: var(--font-mono);">
+                        60 FPS
+                    </div>
+                </div>
+
+                <!-- Window Content -->
+                <div class="window-content">
+                    <!-- Nav bar inside mockup -->
+                    <div class="inner-nav">
+                        <div class="inner-brand">
+                            &lt;<span>Shoeb</span>.Dev/&gt;
+                        </div>
+                        <div class="inner-menu">
+                            <span class="active">Home</span>
+                            <span>About</span>
+                            <span>Skills</span>
+                            <span>Projects</span>
+                            <span>Contact</span>
+                        </div>
+                    </div>
+
+                    <!-- Inner Hero inside mockup -->
+                    <div class="inner-hero">
+                        <div class="inner-hero-text">
+                            <div class="inner-status-pill">
+                                &bull; Available for Full Stack Roles
+                            </div>
+                            <h2 class="inner-name">
+                                Hi, I'm <br><span>Shoeb Tahsildar</span>
+                            </h2>
+                            <p class="inner-desc">
+                                Detail-oriented MCA student (8.70 MCA & 9.00 BCA CGPA) with hands-on exposure to full-stack web architectures, React, Node.js, and SQL.
+                            </p>
+                            <div class="inner-cta-btns">
+                                <div class="btn-cyan">
+                                    Get In Touch &rarr;
+                                </div>
+                                <div class="btn-dark">
+                                    View CV
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="inner-avatar-wrap">
+                            <div class="inner-avatar-circle">
+                                <img src="profile.jpg" alt="Shoeb Tahsildar">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Projects Strip inside mockup -->
+                    <div class="inner-projects-strip">
+                        <div class="projects-strip-header">
+                            <div class="strip-heading">
+                                <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+                                Featured Projects Showcase
+                            </div>
+                            <div class="strip-count">3 Live Builds</div>
+                        </div>
+                        <div class="projects-grid-mini">
+                            <div class="project-tile">
+                                <img src="project-lost-found.png" alt="Lost & Found Portal">
+                                <div class="tile-meta">
+                                    <h6>Lost &amp; Found Portal</h6>
+                                    <span>Flask &bull; SQLite &bull; Web</span>
+                                </div>
+                            </div>
+                            <div class="project-tile">
+                                <img src="project-foundry-erp.png" alt="Foundry ERP">
+                                <div class="tile-meta">
+                                    <h6>Foundry ERP</h6>
+                                    <span>Enterprise Web App</span>
+                                </div>
+                            </div>
+                            <div class="project-tile">
+                                <img src="project-academic-dashboard.png" alt="Academic Dashboard">
+                                <div class="tile-meta">
+                                    <h6>Academic Portal</h6>
+                                    <span>Full Stack Dashboard</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Badges -->
+            <div class="float-overlay float-badge-top">
+                <div class="float-icon float-icon-purple">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <div>
+                    <div class="float-title">98+ Performance Score</div>
+                    <div class="float-desc">Clean Architecture &bull; 60 FPS UI</div>
+                </div>
+            </div>
+
+            <div class="float-overlay float-badge-bottom">
+                <div class="float-icon float-icon-emerald">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                </div>
+                <div>
+                    <div class="float-title">100% Requirements Completed</div>
+                    <div class="float-desc">PRODIGY_WD_04 Ready for Review</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Bar -->
+    <footer class="footer-bar">
+        <div class="footer-contact">
+            <span class="contact-item">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                github.com/tahsildarshoeb
+            </span>
+            <span class="contact-item">
+                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                linkedin.com/in/shoeb-tahsildar-9245b4349
+            </span>
+            <span class="contact-item">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                tahsildarshoeb@gmail.com
+            </span>
+        </div>
+
+        <div class="footer-credit">
+            Engineered by <strong>Shoeb Raju Tahsildar</strong> &bull; Prodigy InfoTech Intern
+        </div>
+
+        <div class="footer-tags">
+            <span>#ProdigyInfoTech</span>
+            <span>#WebDevelopment</span>
+            <span>#Task04</span>
+            <span>#FullStack</span>
+        </div>
+    </footer>
+
+</body>
+</html>

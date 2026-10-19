@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoeb Raju Tahsildar | Full Stack Developer & MCA Student</title>
+    <meta name="description" content="Portfolio of Shoeb Raju Tahsildar - Full Stack Developer and MCA student specializing in React, Node.js, Java, Python, and SQL databases.">
+    <meta name="keywords" content="Shoeb Tahsildar, Full Stack Developer, MCA Student, React Developer, Web Developer Portfolio, Kolhapur">
+    <meta name="author" content="Shoeb Raju Tahsildar">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Dynamic Glowing Orbs -->
+    <div class="bg-glow orb-1"></div>
+    <div class="bg-glow orb-2"></div>
+    <div class="bg-glow orb-3"></div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span><span class="logo-text">Shoeb</span><span class="logo-highlight">.Dev</span><span class="logo-bracket">/&gt;</span>
+            </a>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#about" class="nav-link"><i class="fas fa-user-circle"></i> About</a>
+                <a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> Education</a>
+                <a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a>
+                <a href="#projects" class="nav-link"><i class="fas fa-project-diagram"></i> Projects</a>
+                <a href="#strengths" class="nav-link"><i class="fas fa-star"></i> Strengths</a>
+                <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">
+                    <i class="fas fa-moon moon-icon"></i>
+                    <i class="fas fa-sun sun-icon"></i>
+                </button>
+                
+                <button class="btn btn-sm btn-outline" onclick="openCVModal()" title="View / Download Resume">
+                    <i class="fas fa-file-alt"></i> View CV
+                </button>
+
+                <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="status-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Available for Full Stack Roles & Internships</span>
+                </div>
+
+                <h1 class="hero-name">
+                    Hi, I'm <span class="gradient-text">Shoeb Tahsildar</span>
+                </h1>
+
+                <div class="typing-wrapper">
+                    <span class="typing-prefix">I am a </span>
+                    <span id="typed-text" class="typed-text"></span>
+                    <span class="typing-cursor">|</span>
+                </div>
+
+                <p class="hero-description">
+                    Motivated and detail-oriented MCA student with strong academic performance (<strong>8.70 MCA CGPA</strong> & <strong>9.00 BCA CGPA</strong>) and hands-on exposure to full-stack web development, relational database design, and modern web architectures.
+                </p>
+
+                <div class="hero-chips">
+                    <span class="chip"><i class="fas fa-map-marker-alt"></i> Kolhapur, Maharashtra</span>
+                    <span class="chip"><i class="fas fa-graduation-cap"></i> MCA Candidate (2025–2027)</span>
+                    <span class="chip"><i class="fas fa-laptop-code"></i> React • Node.js • Java • Python</span>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Get In Touch
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">
+                        <i class="fas fa-laptop-code"></i> Explore Projects
+                    </a>
+                </div>
+
+                <!-- Quick Clickable Contact Chips -->
+                <div class="quick-contacts">
+                    <div class="quick-contact-item">
+                        <a href="mailto:tahsildarshoeb@gmail.com" class="contact-link-pill" title="Click to Send Email">
+                            <i class="fas fa-envelope"></i> tahsildarshoeb@gmail.com
+                        </a>
+                        <button class="copy-btn" onclick="copyText('tahsildarshoeb@gmail.com', 'Email address copied to clipboard!')" title="Copy Email">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+
+                    <div class="quick-contact-item">
+                        <a href="tel:+917387159843" class="contact-link-pill" title="Click to Call">
+                            <i class="fas fa-phone-alt"></i> +91 7387159843
+                        </a>
+                        <button class="copy-btn" onclick="copyText('7387159843', 'Phone number copied to clipboard!')" title="Copy Phone">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+
+                    <div class="quick-contact-item">
+                        <a href="https://linkedin.com/in/shoeb-tahsildar-9245b4349" target="_blank" rel="noopener noreferrer" class="contact-link-pill" title="View LinkedIn Profile">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Image Container -->
+            <div class="hero-image-wrapper">
+                <div class="image-frame">
+                    <div class="glow-ring"></div>
+                    <img src="profile.jpg" alt="Shoeb Raju Tahsildar" class="profile-img">
+                    
+                    <!-- Floating Tech Badges -->
+                    <div class="float-badge badge-1">
+                        <i class="fab fa-react react-spin"></i>
+                        <div>
+                            <span class="badge-title">React & Node</span>
+                            <span class="badge-sub">Full Stack</span>
+                        </div>
+                    </div>
+
+                    <div class="float-badge badge-2">
+                        <i class="fas fa-award"></i>
+                        <div>
+                            <span class="badge-title">8.70 & 9.00</span>
+                            <span class="badge-sub">MCA & BCA CGPA</span>
+                        </div>
+                    </div>
+
+                    <div class="float-badge badge-3">
+                        <i class="fas fa-database"></i>
+                        <div>
+                            <span class="badge-title">SQL & REST</span>
+                            <span class="badge-sub">Database & API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle"><i class="fas fa-user"></i> Overview</span>
+                <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card main-about-card">
+                    <p class="about-text">
+                        Enthusiastic and detail-oriented computer applications graduate with a strong interest in full stack software development and modern technologies. Possesses solid academic credentials, rapid adaptability to new tools, and a collaborative mindset focused on creating high-performance, robust, user-centric applications.
+                    </p>
+                    <p class="about-text">
+                        Currently pursuing <strong>Master of Computer Applications (MCA)</strong> at Dr. J. J. Magdum College of Engineering, Jaysingpur, after graduating with a stellar <strong>9.00 CGPA in BCA</strong> from Shivaji University. Driven by continuous learning, clean code practices, and building end-to-end software solutions.
+                    </p>
+
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Full-Stack Web Development & RESTful APIs</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Database Architecture & Query Optimization</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Object-Oriented Programming (OOP) & DSA</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Agile Collaboration & Problem Solving</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-counter-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="stat-number" data-target="8.70">8.70</div>
+                        <div class="stat-label">MCA CGPA</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-medal"></i></div>
+                        <div class="stat-number" data-target="9.00">9.00</div>
+                        <div class="stat-label">BCA CGPA</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+                        <div class="stat-number" data-target="3">3+</div>
+                        <div class="stat-label">Full Stack Projects</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
+                        <div class="stat-number" data-target="10">10+</div>
+                        <div class="stat-label">Tech Tools & Stacks</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section education-section" id="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle"><i class="fas fa-book-reader"></i> Academic Background</span>
+                <h2 class="section-title">Education & <span class="gradient-text">Qualifications</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="timeline">
+                <!-- MCA -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-date-badge">2025 – 2027 (Expected)</div>
+                        <h3 class="timeline-title">Master of Computer Applications (MCA)</h3>
+                        <h4 class="timeline-institution">Dr. J. J. Magdum College of Engineering, Jaysingpur</h4>
+                        <div class="score-pill score-highlight">
+                            <i class="fas fa-star"></i> CGPA: <strong>8.70</strong>
+                        </div>
+                        <p class="timeline-desc">
+                            Specializing in advanced software engineering, distributed web systems, enterprise database architectures, full-stack frameworks, and cloud-ready web applications.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- BCA -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot"><i class="fas fa-university"></i></div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-date-badge">2022 – 2025</div>
+                        <h3 class="timeline-title">Bachelor of Computer Applications (BCA)</h3>
+                        <h4 class="timeline-institution">Shivaji University, Kolhapur</h4>
+                        <div class="score-pill score-highlight">
+                            <i class="fas fa-trophy"></i> CGPA: <strong>9.00</strong> (Distinction)
+                        </div>
+                        <p class="timeline-desc">
+                            Graduated with top academic honors. Coursework covered Data Structures, Algorithm Analysis, Object-Oriented Programming (Java & C++), Web Technologies, DBMS, and Systems Design.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- HSC -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot"><i class="fas fa-school"></i></div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-date-badge">2022</div>
+                        <h3 class="timeline-title">Higher Secondary Certificate (HSC)</h3>
+                        <h4 class="timeline-institution">Maharashtra State Board</h4>
+                        <div class="score-pill">
+                            <i class="fas fa-percentage"></i> Score: <strong>62.00%</strong>
+                        </div>
+                        <p class="timeline-desc">
+                            Completed Higher Secondary education with focus on Science and Mathematics foundational analytical concepts.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SSC -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot"><i class="fas fa-certificate"></i></div>
+                    <div class="timeline-content glass-card">
+                        <div class="timeline-date-badge">2020</div>
+                        <h3 class="timeline-title">Secondary School Certificate (SSC)</h3>
+                        <h4 class="timeline-institution">Maharashtra State Board</h4>
+                        <div class="score-pill">
+                            <i class="fas fa-award"></i> Score: <strong>82.00%</strong>
+                        </div>
+                        <p class="timeline-desc">
+                            Achieved high distinction in secondary school board examination with strong grounding in mathematics and problem solving.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section class="section skills-section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle"><i class="fas fa-cogs"></i> Technical Proficiency</span>
+                <h2 class="section-title">Skills & <span class="gradient-text">Technologies</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <!-- Skill Filter Buttons -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Skills</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="backend">Backend & DB</button>
+                <button class="filter-btn" data-filter="languages">Languages</button>
+                <button class="filter-btn" data-filter="tools">Tools & Concepts</button>
+            </div>
+
+            <div class="skills-grid" id="skills-grid">
+                <!-- Frontend -->
+                <div class="skill-card glass-card" data-category="frontend">
+                    <div class="skill-icon"><i class="fab fa-html5" style="color: #e34f26;"></i></div>
+                    <div class="skill-info">
+                        <h3>HTML5</h3>
+                        <span class="skill-category">Frontend</span>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-category="frontend">
+                    <div class="skill-icon"><i class="fab fa-css3-alt" style="color: #1572b6;"></i></div>
+                    <div class="skill-info">
+                        <h3>CSS3</h3>
+                        <span class="skill-category">Frontend</span>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-category="frontend">
+                    <div class="skill-icon"><i class="fab fa-js-square" style="color: #f7df1e;"></i></div>
+                    <div class="skill-info">
+                        <h3>JavaScript (ES6+)</h3>
+                        <span class="skill-category">Frontend & Logic</span>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-category="frontend">
+                    <div class="skill-icon"><i class="fab fa-react" style="color: #61dafb;"></i></div>
+                    <div class="skill-info">
+                        <h3>React</h3>
+                        <span class="skill-category">Frontend Library</span>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-category="frontend">
+                    <div class="skill-icon"><i class="fas fa-wind" style="color: #38bdf8;"></i></div>
+                    <div class="skill-info">
+                        <h3>Tailwind CSS</h3>
+                        <span class="skill-category">Utility-First CSS</span>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-category="frontend">
+                    <div class="skill-icon"><i class="fab fa-bootstrap" style="color: #7952b3;"></i></div>
+                    <div class="skill-info">
+                        <h3>Bootstrap</h3>
+                        <span class="skill-category">UI Framework</span>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-category="frontend">
+                    <div class="skill-icon"><i class="fas fa-mobile-alt" style="color: #a855f7;"></i></div>
+                    <div class="skill-info">
+                        <h3>Responsive Web Design</h3>
+                        <span class="skill-category">UI/UX Layout</span>
+                    </div>
+                </div>
+
+                <!-- Backend & Databases -->
+                <div class="skill-card glass-card" data-category="backend">
+                    <div class="skill-icon"><i class="fab fa-node-js" style="color: #339933;"></i></div>
+                    <div class="skill-info">
+                        <h3>Node.js</h3>
+                        <span class="skill-category">Backend Runtime</span>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-category="backend">
+                    <div class="skill-icon"><i class="fas fa-server" style="color: #68a063;"></i></div>
+                    <div class="skill-info">
+                        <h3>Express.js</h3>
+                        <span class="skill-category">Backend Framework</span>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-category="backend">
+                    <div class="skill-icon"><i class="fab fa-python" style="color: #3776ab;"></i></div>
+                    <div class="skill-info">
+                        <h3>Flask</h3>
+                        <span class="skill-category">Python Web Microframework</span>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-category="backend">
+                    <div class="skill-icon"><i class="fas fa-database" style="color: #00758f;"></i></div>
+                    <div class="skill-info">
+                        <h3>MySQL</h3>
+                        <span class="skill-category">Relational Database</span>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-category="backend">
+                    <div class="skill-icon"><i class="fas fa-table" style="color: #003b57;"></i></div>
+                    <div class="skill-info">
+                        <h3>SQLite</h3>
+                        <span class="skill-category">Embedded Database</span>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-category="backend">
+                    <div class="skill-icon"><i class="fas fa-network-wired" style="color: #ec4899;"></i></div>
+                    <div class="skill-info">
+                        <h3>RESTful API Architecture</h3>
+                        <span class="skill-category">Backend Services</span>
+                    </div>
+                </div>
+
+                <!-- Programming Languages -->
+                <div class="skill-card glass-card" data-category="languages">
+                    <div class="skill-icon"><i class="fab fa-java" style="color: #f89820;"></i></div>
+                    <div class="skill-info">
+                        <h3>Java</h3>
+                        <span class="skill-category">Programming Language</span>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-category="languages">
+                    <div class="skill-icon"><i class="fab fa-python" style="color: #ffde57;"></i></div>
+                    <div class="skill-info">
+                        <h3>Python</h3>
+                        <span class="skill-category">Programming Language</span>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-category="languages">
+                    <div class="skill-icon"><i class="fas fa-code" style="color: #00599c;"></i></div>
+                    <div class="skill-info">
+                        <h3>C & C++</h3>
+                        <span class="skill-category">Core Languages</span>
+                    </div>
+                </div>
+
+                <!-- Tools & Concepts -->
+                <div class="skill-card glass-card" data-category="tools">
+                    <div class="skill-icon"><i class="fab fa-git-alt" style="color: #f05032;"></i></div>
+                    <div class="skill-info">
+                        <h3>Git & GitHub</h3>
+                        <span class="skill-category">Version Control</span>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-category="tools">
+                    <div class="skill-icon"><i class="fas fa-code-branch" style="color: #007acc;"></i></div>
+                    <div class="skill-info">
+                        <h3>VS Code</h3>
+                        <span class="skill-category">Development Environment</span>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-category="tools">
+                    <div class="skill-icon"><i class="fas fa-cubes" style="color: #f43f5e;"></i></div>
+                    <div class="skill-info">
+                        <h3>OOPs Concepts</h3>
+                        <span class="skill-category">Software Design</span>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-category="tools">
+                    <div class="skill-icon"><i class="fas fa-sitemap" style="color: #8b5cf6;"></i></div>
+                    <div class="skill-info">
+                        <h3>Data Structures & Algorithms</h3>
+                        <span class="skill-category">Core Computing</span>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-category="tools">
+                    <div class="skill-icon"><i class="fas fa-desktop" style="color: #10b981;"></i></div>
+                    <div class="skill-info">
+                        <h3>DBMS & Operating Systems</h3>
+                        <span class="skill-category">Computer Fundamentals</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects-section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle"><i class="fas fa-folder-open"></i> Portfolio Work</span>
+                <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="projects-grid">
+                     <!-- Project 1: Lost and Found Portal -->
+                <div class="project-card glass-card">
+                    <div class="project-banner">
+                        <img src="project-lost-found.png" alt="Lost and Found Portal Preview" class="project-banner-img">
+                        <div class="project-overlay"></div>
+                        <div class="project-tag">Full Stack Web App</div>
+                        <div class="project-title-overlay">Lost &amp; Found Portal</div>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-tech-stack">
+                            <span class="tech-pill">React</span>
+                            <span class="tech-pill">Node.js</span>
+                            <span class="tech-pill">Express</span>
+                            <span class="tech-pill">MySQL</span>
+                            <span class="tech-pill">Tailwind CSS</span>
+                        </div>
+
+                        <h3 class="project-title">Lost and Found Portal</h3>
+                        <p class="project-description">
+                            Developed a full-featured web-based portal to report and track lost and found items within a college campus environment.
+                        </p>
+
+                        <ul class="project-bullets">
+                            <li><i class="fas fa-angle-right"></i> Built responsive frontend user interfaces using React and designed a structured SQL database for secure data persistence.</li>
+                            <li><i class="fas fa-angle-right"></i> Implemented user authentication and RESTful API endpoints for posting claims, verification, and status updates.</li>
+                        </ul>
+
+                        <div class="project-actions">
+                            <button class="btn btn-sm btn-primary" onclick="openProjectModal('lost-found')">
+                                <i class="fas fa-circle-info"></i> Project Details &amp; Architecture
+                            </button>
+                        </div>
+                    </div>
+                </div>                  <!-- Project 2: Foundry ERP System -->
+                <div class="project-card glass-card">
+                    <div class="project-banner">
+                        <img src="project-foundry-erp.png" alt="Foundry ERP System Preview" class="project-banner-img">
+                        <div class="project-overlay"></div>
+                        <div class="project-tag">Enterprise Java App</div>
+                        <div class="project-title-overlay">Foundry ERP System</div>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-tech-stack">
+                            <span class="tech-pill">Java</span>
+                            <span class="tech-pill">Spring Boot</span>
+                            <span class="tech-pill">MySQL</span>
+                            <span class="tech-pill">HTML5</span>
+                            <span class="tech-pill">Bootstrap</span>
+                        </div>
+
+                        <h3 class="project-title">Foundry ERP System</h3>
+                        <p class="project-description">
+                            Contributed to the development of an ERP system focused on workflow automation and inventory management for a foundry enterprise.
+                        </p>
+
+                        <ul class="project-bullets">
+                            <li><i class="fas fa-angle-right"></i> Developed modules for tracking raw material consumption, batch inventory, and daily production records.</li>
+                            <li><i class="fas fa-angle-right"></i> Integrated frontend templates with Spring Boot MVC controllers and optimized complex relational queries.</li>
+                        </ul>
+
+                        <div class="project-actions">
+                            <button class="btn btn-sm btn-primary" onclick="openProjectModal('foundry-erp')">
+                                <i class="fas fa-circle-info"></i> Project Details &amp; Architecture
+                            </button>
+                        </div>
+                    </div>
+                </div>                  <!-- Project 3: Student Academic Dashboard -->
+                <div class="project-card glass-card">
+                    <div class="project-banner">
+                        <img src="project-academic-dashboard.png" alt="Student Academic Dashboard Preview" class="project-banner-img">
+                        <div class="project-overlay"></div>
+                        <div class="project-tag">Analytics &amp; Visualization</div>
+                        <div class="project-title-overlay">Academic Dashboard</div>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-tech-stack">
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">Flask</span>
+                            <span class="tech-pill">SQLite</span>
+                            <span class="tech-pill">Chart.js</span>
+                            <span class="tech-pill">CSS3</span>
+                        </div>
+
+                        <h3 class="project-title">Student Academic Dashboard</h3>
+                        <p class="project-description">
+                            Designed and implemented a lightweight dashboard to monitor, visualize, and analyze student semester performance metrics.
+                        </p>
+
+                        <ul class="project-bullets">
+                            <li><i class="fas fa-angle-right"></i> Utilized Chart.js for dynamic, interactive visualizations of grade trends, distribution, and performance metrics.</li>
+                            <li><i class="fas fa-angle-right"></i> Built modular Flask routes backed by SQLite database storage for real-time grade calculations.</li>
+                        </ul>
+
+                        <div class="project-actions">
+                            <button class="btn btn-sm btn-primary" onclick="openProjectModal('academic-dashboard')">
+                                <i class="fas fa-circle-info"></i> Project Details & Architecture
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Strengths & Languages Section -->
+    <section class="section strengths-section" id="strengths">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle"><i class="fas fa-fire"></i> Core Competencies</span>
+                <h2 class="section-title">Strengths & <span class="gradient-text">Languages</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="strengths-languages-grid">
+                <!-- Core Strengths -->
+                <div class="strengths-col">
+                    <h3 class="sub-heading"><i class="fas fa-bolt"></i> Professional Strengths</h3>
+                    
+                    <div class="strength-card glass-card">
+                        <div class="strength-icon"><i class="fas fa-brain"></i></div>
+                        <div class="strength-content">
+                            <h4>Analytical Thinking & Logical Reasoning</h4>
+                            <p>Proven ability to break down complex computing problems into efficient algorithms and clean code structures.</p>
+                        </div>
+                    </div>
+
+                    <div class="strength-card glass-card">
+                        <div class="strength-icon"><i class="fas fa-rocket"></i></div>
+                        <div class="strength-content">
+                            <h4>High Adaptability & Rapid Learning</h4>
+                            <p>Quick to adopt new frameworks, developer tools, and programming paradigms in fast-paced environments.</p>
+                        </div>
+                    </div>
+
+                    <div class="strength-card glass-card">
+                        <div class="strength-icon"><i class="fas fa-award"></i></div>
+                        <div class="strength-content">
+                            <h4>Consistent Academic Excellence</h4>
+                            <p>Strong track record demonstrating diligence and focus (8.70 MCA CGPA & 9.00 BCA CGPA).</p>
+                        </div>
+                    </div>
+
+                    <div class="strength-card glass-card">
+                        <div class="strength-icon"><i class="fas fa-users"></i></div>
+                        <div class="strength-content">
+                            <h4>Communication & Team Collaboration</h4>
+                            <p>Effective interpersonal skills, leadership mindset, and passion for collaborative software development.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages Fluency -->
+                <div class="languages-col">
+                    <h3 class="sub-heading"><i class="fas fa-language"></i> Languages Known</h3>
+
+                    <div class="language-card glass-card">
+                        <div class="language-header">
+                            <span class="lang-name">English</span>
+                            <span class="lang-level badge-prof">Professional</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="language-card glass-card">
+                        <div class="language-header">
+                            <span class="lang-name">Hindi</span>
+                            <span class="lang-level badge-conv">Conversational</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="language-card glass-card">
+                        <div class="language-header">
+                            <span class="lang-name">Marathi</span>
+                            <span class="lang-level badge-native">Native</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Summary Box -->
+                    <div class="mca-box glass-card">
+                        <div class="mca-box-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="mca-box-text">
+                            "Passionate about building robust, user-centric software solutions, database design, and modern web architectures with continuous learning."
+                        </p>
+                        <span class="mca-author">— Shoeb Raju Tahsildar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle"><i class="fas fa-comments"></i> Let's Connect</span>
+                <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Direct Cards -->
+                <div class="contact-info-col">
+                    <h3 class="sub-heading">Contact Information</h3>
+                    <p class="contact-lead-text">
+                        Feel free to reach out for software engineering opportunities, internships, project collaborations, or tech discussions!
+                    </p>
+
+                    <div class="contact-cards-list">
+                        <!-- Email Card -->
+                        <div class="contact-card glass-card">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-detail">
+                                <span class="contact-label">Email Address</span>
+                                <a href="mailto:tahsildarshoeb@gmail.com" class="contact-value link-accent">tahsildarshoeb@gmail.com</a>
+                            </div>
+                            <button class="copy-btn-large" onclick="copyText('tahsildarshoeb@gmail.com', 'Email copied!')" title="Copy Email">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+
+                        <!-- Phone Card -->
+                        <div class="contact-card glass-card">
+                            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="contact-detail">
+                                <span class="contact-label">Phone Number</span>
+                                <a href="tel:+917387159843" class="contact-value link-accent">+91 7387159843</a>
+                            </div>
+                            <button class="copy-btn-large" onclick="copyText('7387159843', 'Phone copied!')" title="Copy Phone">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+
+                        <!-- Location Card -->
+                        <div class="contact-card glass-card">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-detail">
+                                <span class="contact-label">Location</span>
+                                <span class="contact-value">Kolhapur, Maharashtra, India</span>
+                            </div>
+                        </div>
+
+                        <!-- Social LinkedIn Card -->
+                        <div class="contact-card glass-card">
+                            <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                            <div class="contact-detail">
+                                <span class="contact-label">LinkedIn</span>
+                                <a href="https://linkedin.com/in/shoeb-tahsildar-9245b4349" target="_blank" rel="noopener noreferrer" class="contact-value link-accent">linkedin.com/in/shoeb-tahsildar</a>
+                            </div>
+                            <a href="https://linkedin.com/in/shoeb-tahsildar-9245b4349" target="_blank" rel="noopener noreferrer" class="external-link-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Contact Form -->
+                <div class="contact-form-col glass-card">
+                    <h3 class="sub-heading">Send a Message</h3>
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" id="name" required placeholder="John Doe">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="email" id="email" required placeholder="john@example.com">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-tag input-icon"></i>
+                                <input type="text" id="subject" required placeholder="Job Opportunity / Project Inquiry">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="4" required placeholder="Hi Shoeb, I would like to discuss..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#hero" class="nav-logo">
+                    <span class="logo-bracket">&lt;</span><span class="logo-text">Shoeb</span><span class="logo-highlight">.Dev</span><span class="logo-bracket">/&gt;</span>
+                </a>
+                <p>Building high-performance, user-centric full stack applications.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer-copy">
+                <p>&copy; 2026 Shoeb Raju Tahsildar. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" title="Back to Top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Project Detail Interactive Modal Overlay -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-card glass-card">
+            <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+            <div id="modal-content">
+                <!-- Dynamic Content Injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- CV Viewer Modal -->
+    <div class="modal-overlay" id="cvModal">
+        <div class="modal-card glass-card" style="max-width: 780px; width: 100%;">
+            <button class="modal-close" onclick="closeCVModal()">&times;</button>
+            <div class="cv-viewer-inner">
+                <div class="cv-header">
+                    <h2>Shoeb Raju Tahsildar</h2>
+                    <p>MCA Student &bull; Full Stack Developer &bull; Kolhapur, Maharashtra</p>
+                    <div style="display:flex; gap:0.8rem; justify-content:center; margin-top:1rem; flex-wrap:wrap;">
+                        <a href="Shoeb_Raju_Tahsildar_CV.pdf" download="Shoeb_Raju_Tahsildar_CV.pdf" class="btn btn-primary btn-sm">
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                        <a href="Shoeb_Raju_Tahsildar_CV.pdf" target="_blank" class="btn btn-secondary btn-sm">
+                            <i class="fas fa-external-link-alt"></i> Open in Browser
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cv-body">
+                    <div class="cv-section">
+                        <h3 class="cv-section-title"><i class="fas fa-user"></i> Profile Summary</h3>
+                        <p class="cv-text">Motivated and detail-oriented MCA student and computer applications graduate with strong academic performance (MCA CGPA 8.70 | BCA CGPA 9.00). Passionate about full-stack software development, relational database design, and modern web architectures with a collaborative mindset and rapid adaptability.</p>
+                    </div>
+
+                    <div class="cv-section">
+                        <h3 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+                        <div class="cv-edu-item">
+                            <div class="cv-edu-header"><strong>MCA — Dr. J. J. Magdum College of Engineering, Jaysingpur</strong><span class="cv-year">2025–2027</span></div>
+                            <div class="cv-edu-detail">Shivaji University &bull; CGPA: 8.70</div>
+                        </div>
+                        <div class="cv-edu-item">
+                            <div class="cv-edu-header"><strong>BCA — Shivaji University, Kolhapur</strong><span class="cv-year">2022–2025</span></div>
+                            <div class="cv-edu-detail">CGPA: 9.00 (Distinction)</div>
+                        </div>
+                        <div class="cv-edu-item">
+                            <div class="cv-edu-header"><strong>HSC — Maharashtra State Board</strong><span class="cv-year">2022</span></div>
+                            <div class="cv-edu-detail">62.00%</div>
+                        </div>
+                        <div class="cv-edu-item">
+                            <div class="cv-edu-header"><strong>SSC — Maharashtra State Board</strong><span class="cv-year">2020</span></div>
+                            <div class="cv-edu-detail">82.00%</div>
+                        </div>
+                    </div>
+
+                    <div class="cv-two-col">
+                        <div class="cv-section">
+                            <h3 class="cv-section-title"><i class="fas fa-code"></i> Technical Skills</h3>
+                            <div class="cv-skills-list">
+                                <span class="cv-skill-chip">React</span><span class="cv-skill-chip">Node.js</span><span class="cv-skill-chip">Express.js</span><span class="cv-skill-chip">Java</span><span class="cv-skill-chip">Python</span><span class="cv-skill-chip">Flask</span><span class="cv-skill-chip">Spring Boot</span><span class="cv-skill-chip">HTML5</span><span class="cv-skill-chip">CSS3</span><span class="cv-skill-chip">JavaScript</span><span class="cv-skill-chip">MySQL</span><span class="cv-skill-chip">SQLite</span><span class="cv-skill-chip">Bootstrap</span><span class="cv-skill-chip">Tailwind CSS</span><span class="cv-skill-chip">C</span><span class="cv-skill-chip">C++</span><span class="cv-skill-chip">Git &amp; GitHub</span><span class="cv-skill-chip">REST API</span><span class="cv-skill-chip">OOPs</span><span class="cv-skill-chip">DSA</span><span class="cv-skill-chip">DBMS</span>
+                            </div>
+                        </div>
+
+                        <div class="cv-section">
+                            <h3 class="cv-section-title"><i class="fas fa-bolt"></i> Strengths</h3>
+                            <ul class="cv-list">
+                                <li>Analytical &amp; Logical Reasoning</li>
+                                <li>Adaptability &amp; Fast Learning</li>
+                                <li>Consistent Academic Excellence</li>
+                                <li>Team Collaboration &amp; Communication</li>
+                            </ul>
+                            <h3 class="cv-section-title" style="margin-top:1rem;"><i class="fas fa-language"></i> Languages</h3>
+                            <ul class="cv-list">
+                                <li>English — Professional</li>
+                                <li>Hindi — Conversational</li>
+                                <li>Marathi — Native</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cv-section">
+                        <h3 class="cv-section-title"><i class="fas fa-project-diagram"></i> Projects</h3>
+                        <div class="cv-edu-item">
+                            <div class="cv-edu-header"><strong>Lost and Found Portal</strong><span class="cv-year-tech">React · Node.js · Express · MySQL · Tailwind CSS</span></div>
+                            <p class="cv-text">Campus web portal for reporting and tracking lost/found items with RESTful API and user authentication.</p>
+                        </div>
+                        <div class="cv-edu-item">
+                            <div class="cv-edu-header"><strong>Foundry ERP System</strong><span class="cv-year-tech">Java · Spring Boot · MySQL · Bootstrap</span></div>
+                            <p class="cv-text">Enterprise system for raw material tracking, inventory, and production workflow automation.</p>
+                        </div>
+                        <div class="cv-edu-item">
+                            <div class="cv-edu-header"><strong>Student Academic Dashboard</strong><span class="cv-year-tech">Python · Flask · SQLite · Chart.js</span></div>
+                            <p class="cv-text">Analytics dashboard for monitoring student semester performance with interactive grade visualizations.</p>
+                        </div>
+                    </div>
+
+                    <div class="cv-section">
+                        <h3 class="cv-section-title"><i class="fas fa-address-card"></i> Contact</h3>
+                        <div class="cv-contact-row">
+                            <span><i class="fas fa-envelope"></i> <a href="mailto:tahsildarshoeb@gmail.com">tahsildarshoeb@gmail.com</a></span>
+                            <span><i class="fas fa-phone-alt"></i> <a href="tel:+917387159843">+91 7387159843</a></span>
+                            <span><i class="fas fa-map-marker-alt"></i> Kolhapur, Maharashtra</span>
+                            <span><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/shoeb-tahsildar-9245b4349" target="_blank">LinkedIn Profile</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
